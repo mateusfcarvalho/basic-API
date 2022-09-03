@@ -14,11 +14,6 @@ module.exports = (app) => {
         res.status(Utils.responseStatus(response.name));
         res.json(response);
     });
-    app.delete(`${route}/delete`, async (req, res) => {
-        const response = await User.delete(req.body);
-        res.status(Utils.responseStatus(response.name));
-        res.json(response);
-    });
     app.get(`${route}/list`, async (req, res) => {
         const response = await User.list();
         res.status(Utils.responseStatus(response.name));
@@ -26,6 +21,11 @@ module.exports = (app) => {
     });
     app.patch(`${route}/listUser`, async (req, res) => {
         const response = await User.listByEmail(req.body);
+        res.status(Utils.responseStatus(response.name));
+        res.json(response);
+    });
+    app.delete(`${route}/delete`, async (req, res) => {
+        const response = await User.delete(req.body);
         res.status(Utils.responseStatus(response.name));
         res.json(response);
     });

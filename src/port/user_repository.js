@@ -26,15 +26,6 @@ const UserRepository = {
         }
     },
 
-    async delete(data) {
-        try {
-            const result = await UserModel.deleteOne({ email: data.email }).exec();
-            return result.deletedCount;
-        } catch (error) {
-            return error;
-        }
-    },
-
     async list() {
         try {
             const result = await UserModel.find().exec();
@@ -50,6 +41,15 @@ const UserRepository = {
             return result;
         } catch (e) {
             return e;
+        }
+    },
+
+    async delete(data) {
+        try {
+            const result = await UserModel.deleteOne({ email: data.email }).exec();
+            return result.deletedCount;
+        } catch (error) {
+            return error;
         }
     },
 };
