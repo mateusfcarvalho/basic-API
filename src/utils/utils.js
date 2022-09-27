@@ -10,6 +10,10 @@ const Utils = {
                 return StatusCodes.OK;
             case Constants.ErrorValidation.name:
                 return StatusCodes.BAD_REQUEST;
+            case Constants.ErrorValidation.email:
+                return StatusCodes.BAD_REQUEST;
+            case Constants.ErrorValidation.senha:
+                return StatusCodes.BAD_REQUEST;
             case Constants.ErrorDuplicate.name:
                 return StatusCodes.CONFLICT;
             case Constants.ErrorNotFound.name:

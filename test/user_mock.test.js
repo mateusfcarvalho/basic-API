@@ -7,9 +7,9 @@ jest.mock('../src/port/user_repository');
 
 it('CREATE - Dado válido', async () => {
     const data = {
-        nome: "João",
-        email: "joao@inatel.br",
-        senha: "123456789"
+        nome: "Pedro",
+        email: "JP@inatel.br",
+        senha: "jp1234"
     }
 
     const id = Utils.generateUuid();
@@ -22,9 +22,9 @@ it('CREATE - Dado válido', async () => {
 
 it('CREATE - Dado duplicado', async () => {
     const data = {
-        nome: "João",
-        email: "joao@inatel.br",
-        senha: "123456789"
+        nome: "Pedro",
+        email: "JP@inatel.br",
+        senha: "jp1234"
     }
 
     const id = Utils.generateUuid();
